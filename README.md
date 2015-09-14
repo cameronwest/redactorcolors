@@ -17,3 +17,5 @@ Download the plugin and copy the "redactorcolors" folder into your craft plugins
 ```
 
 If you'd like to customize the colors available, those are defined in "/redactorcolors/resources/fontcolor.js"
+
+**Note:** You will need to make sure your fields have "Clean up HTML" disabled or your color styles will get stripped out on save.
