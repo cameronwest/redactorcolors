@@ -22,6 +22,7 @@ RedactorPlugins.fontcolor = function() {
                 var name = buttons[i];
                 var button = this.button.add(name, titles[i]);
                 var $dropdown = this.button.addDropdown(button);
+                $dropdown.attr('rel', 'fontcolor');
 
                 $dropdown.width(242);
                 this.fontcolor.buildPicker($dropdown, name, colors);
@@ -63,10 +64,12 @@ RedactorPlugins.fontcolor = function() {
         set: function(rule, type)
         {
             this.inline.format('span', 'style', rule + ': ' + type + ';');
+            this.dropdown.hide();
         },
         remove: function(rule)
         {
             this.inline.removeStyleRule(rule);
+            this.dropdown.hide();
         }
     }
 };
