@@ -1,0 +1,20 @@
+{% import "_includes/forms" as forms %}
+<h3>REQUIRED:</h3>
+
+{{ forms.lightswitchField({
+id: 'fontcolors',
+name: 'fontcolors',
+label: 'Font Colors' | t,
+value: settings.fontcolors,
+on: (settings.fontcolors is defined) ? settings.fontcolors : "",
+instructions: 'This enables the Font Color picker in Readactor'
+}) }}
+
+{{ forms.lightswitchField({
+id: 'backcolors', 
+name: 'backcolors',
+label: 'Background Colors' | t,
+value: settings.backcolors ,
+on: (settings.backcolors is defined) ? settings.backcolors : "",
+instructions: 'This enables the Background Color picker in Readactor'
+}) }}
