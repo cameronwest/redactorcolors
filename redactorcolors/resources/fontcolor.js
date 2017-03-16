@@ -5,7 +5,7 @@ RedactorPlugins.fontcolor = function() {
     return {
         init: function()
         {
-            var colors = [
+             var colors = [
                 '#ffffff', '#000000', '#eeece1', '#1f497d', '#4f81bd', '#c0504d', '#9bbb59', '#8064a2', '#4bacc6', '#f79646', '#ffff00',
                 '#f2f2f2', '#7f7f7f', '#ddd9c3', '#c6d9f0', '#dbe5f1', '#f2dcdb', '#ebf1dd', '#e5e0ec', '#dbeef3', '#fdeada', '#fff2ca',
                 '#d8d8d8', '#595959', '#c4bd97', '#8db3e2', '#b8cce4', '#e5b9b7', '#d7e3bc', '#ccc1d9', '#b7dde8', '#fbd5b5', '#ffe694',
@@ -14,10 +14,19 @@ RedactorPlugins.fontcolor = function() {
                 '#7f7f7f', '#0c0c0c', '#1d1b10', '#0f243e', '#244061', '#632423', '#4f6128', '#3f3151', '#31859b', '#974806', '#7f6000'
             ];
 
-            var buttons = ['fontcolor', 'backcolor'];
-            var titles = ['Font Color', 'Background Color'];
+            var buttons = [];
+            var titles = [];
+            if(fontcolors){
+                buttons.push('fontcolor');
+                titles.push('Font Colors');
+                
+            }
+            if(backcolors){
+                buttons.push('backcolor');
+                titles.push('Background Colors');
+            }
 
-            for (var i = 0; i < 2; i++)
+            for (var i = 0; i < buttons.length; i++)
             {
                 var name = buttons[i];
                 var button = this.button.add(name, titles[i]);
