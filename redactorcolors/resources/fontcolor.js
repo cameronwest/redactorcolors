@@ -16,14 +16,13 @@ RedactorPlugins.fontcolor = function() {
 
             var buttons = [];
             var titles = [];
-            if(fontcolors){
+            if(typeof fontcolors !== 'undefined' && fontcolors){
                 buttons.push('fontcolor');
                 titles.push('Font Colors');
-                
             }
-            if(backcolors){
-                buttons.push('backcolor');
-                titles.push('Background Colors');
+            if(typeof backcolors !== 'undefined' && backcolors){
+                    buttons.push('backcolor');
+                    titles.push('Background Colors');
             }
 
             for (var i = 0; i < buttons.length; i++)
